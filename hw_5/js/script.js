@@ -183,12 +183,11 @@ let products = [{
 
 function filterCollection(arr, fromVal, toVal) {
     let newArr = arr.filter(function(number) {
-        return number.price > fromVal && number.price < toVal;
+        return number.price >= fromVal && number.price < toVal;
     });
     newArr.sort(function(prev, next){        
         return prev.price - next.price
     });
     return newArr;
 };
-console.log(filterCollection(products, 15, 30));
 console.log(filterCollection(products, 15, 30));
