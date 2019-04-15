@@ -33,4 +33,4 @@ console.log(document.querySelector('ul').previousElementSibling);
 console.log(document.querySelector('ul').nextElementSibling);
 //5
 console.log(document.querySelectorAll('ul > li').length);
-//6
+
