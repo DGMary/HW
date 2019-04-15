@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dropdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <ul class="menu">
+        <li class="dropdown-item">
+            <span>Dropdown menu item</span>
+            <div class="dropdown-menu d-none">
+                <ul class="dropdown-list">
+                    <li>Dropdown item 1</li>
+                    <li>Dropdown item 2</li>
+                </ul>
+                <!-- / .dropdown-list -->
+            </div>
+            <!-- / .dropdown-menu -->
+        </li>
+        <!-- / .dropdown-item -->
+        <li>
+            <span>Menu item</span>
+        </li>
+        <!-- / li -->
+        <li class="dropdown-item">
+            <span>Dropdown menu item 2</span>
+            <div class="dropdown-menu d-none">
+                <ul class="dropdown-list">
+                    <li>Second Dropdown item 1</li>
+                    <li>Second Dropdown item 2</li>
+                </ul>
+                <!-- / .dropdown-list -->
+            </div>
+            <!-- / .dropdown-menu -->
+        </li>
+        <!-- / .dropdown-item -->
+
+    </ul>
+    <script>
+        //6 Код к задаче здесь Реализовать примитивный дропдаун. Изначально все dropdown-menu скрыты через класс .d-none. 
+        // При клике на dropdown-item должен отображаться блок dropdown-menu который вложен именно в тот  dropdown-item 
+        // на котором произошел клик. При повторном клике на этот же dropdown-item блок dropdown-menu должен закрыться. 
+        // При клике на любой другой dropdown-item уже открытый dropdown-menu должен закрываться а на тот который кликнули открываться.
+        function dropdown() {
+            document.addEventListener('click', function (e) {
+                let items = document.querySelectorAll('.dropdown-menu');
+                if (e.target.nextElementSibling != null) {
+                    if (e.target.nextElementSibling.classList.contains('d-none')) {
+                        items.forEach(function (element) {
+                            if (!element.classList.contains('d-none')) {
+                                element.classList.add('d-none');
+                            }
+                        });
+                        e.target.nextElementSibling.classList.remove('d-none');
+                    } else {
+                        e.target.nextElementSibling.classList.add('d-none');
+                    }
+                }
+            })
+        };
+        dropdown();
+    </script>
+</body>
+
+</html>
