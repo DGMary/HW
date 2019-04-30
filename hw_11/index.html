@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prototype. Class. Ajax</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>   
+    <h1>Prototype. Class. Ajax</h1>
+    <pre><ol>
+    <li>Реализовать конструктор в ES6 синтаксисе (также используйте аргументы по умолчанию):
+        function Component(tagName) {
+          this.tagName = tagName || 'div';
+          this.node = document.createElement(tagName);
+        }        
+        Пример вызова:        
+        const comp = new Component('span');</li>
+    <li>Реализовать конструктор и методы в ES6 синтаксисе:
+        function Component(tagName) {
+          this.tagName = tagName || 'div';
+          this.node = document.createElement(tagName);
+        }        
+        Component.prototype.setText = function (text) { 
+          this.node.textContent = text;
+        };</li>
+    <li>Создать класс калькулятора который будет принимать стартовое значение и у него будут методы сложить, вычесть, умножить , разделить. Также у него должны быть геттер и сеттер для получения и установки текущего числа с которым производятся вычисления.</li>
+    <li>Получить пользователей (users) от сервера https://jsonplaceholder.typicode.com используя класс созданный на занятии. 
+        Получив ответ от сервера вывести имена пользователей на страницу. При клике на имя пользователя в произвольном месте должна появиться 
+        подробная информация о нем. Для визуальной части можно использовать bootstrap или другие фреймворки.</li>
+    </ol>
+    <div id="users"></div>
+    <div id="info"></div>
+
+    </pre>
+    <script src="js/script.js"></script>
+    <script src="js/ajax.js"></script>
+</body>
+
+</html>
